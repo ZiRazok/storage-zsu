@@ -1,4 +1,3 @@
-// import connection from "/js/bd.js";
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
@@ -8,7 +7,10 @@ const connection = mysql.createConnection({
     password: ""
 });
 
-export default connection.connect(err => {
-    if (err) { console.log(`Error: ${err}`); return err; }
+export default connection.connect(err=>{
+    if(err){
+        console.log(`Error: ${err}`);
+        return err;
+    }
     else console.log(`Database: ${database} is [OK]`);
 })
